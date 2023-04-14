@@ -17,3 +17,6 @@ it is terrible, developing on the machine itself is faster, unless the language 
 	-  i had to `chown <user>:<user> README.md` to be able to edit it from arch WSL2 xD
 3. environment is ephemeral; meaning u'd need to install all the deps everytime u spin it up, thankfully docker caches things.
 
+---
+
+this is a reference repo (again), anything that should be ignored in git is ***not***, cause i wanna be able to quickly reference it.
