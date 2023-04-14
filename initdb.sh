@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+psql $POSTGRES_CONNECTION <<-EOSQL
+CREATE DATABSE IF NOT EXISTS 'FastToDo';
+EOSQL
