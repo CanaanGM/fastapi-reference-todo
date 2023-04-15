@@ -22,7 +22,8 @@ it is terrible, developing on the machine itself is faster, unless the language 
 ---
 
 ### do better next time:
-- make *docker-compose* run alembic DB creation on ***creation***.
+- make *docker-compose* run alembic DB creation on ***creation***, cause i couldn't make the `initdb.sh` script work.
 - develop locally unless it's either a completly new language or a big ass ***self contained*** project.
 
+---
 this is a reference repo (again), anything that should be ignored in git is ***not***, cause i wanna be able to quickly reference it.
