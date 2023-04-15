@@ -37,7 +37,11 @@ class Users(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
 
+    phone_number = Column(Integer)
     todos = relationship("Todo", back_populates="owner")
+    address_id = Column(Integer,ForeignKey('address_id'), nullable=True)
+    address = relationship("Address", back_populates='user_address')
+
 
 class UserDto(BaseModel):
     username: str
@@ -45,3 +49,15 @@ class UserDto(BaseModel):
     first_name: str
     last_name: str
     password: str
+
+class Address(Base):
+    __tablename__ = 'address'
+    id = Column(Integer, primary_key=True, index=True)
+    address1 = Column('address1', String(), nullable=False)
+    address2 = Column('address2', String(), nullable=False)
+    city = Column('city', String(), nullable=False)
+    state = Column('state', String(), nullable=True)
+    country = Column('country', String(), nullable=False)
+    postalcode = Column('postalcode', String(), nullable=False)
+
+    user_address = relationship("User", back_populates='address')
