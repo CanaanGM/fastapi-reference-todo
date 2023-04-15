@@ -16,14 +16,14 @@ alembic init
 > this will create 2 files:
 
 1. alembic 
-- ![[Pasted image 20230415041125.png]]
-- ![[Pasted image 20230415041137.png]]
+- ![](folder_1.png)
+- ![](ini_file.png)
 
 the folder has all the migrations in the versions
 
 in the `ini` file, u need to give it the connection string(s) for teh DB
 
-- ![[Pasted image 20230415041256.png]]
+- ![](connection_string.png)
 - in the `env.py` inside the folder:
 	- add this and customize it so it can access ur models
 ```python
@@ -32,19 +32,19 @@ sys.path.append("howver many up it takes")
 example = sys.path.append("..")
 ```
 
-- ![[Pasted image 20230415041614.png]]
+- ![](file_path_dir.png)
 ### create a revision (migration)
 ```bash
 alembic revision -m <name>
 alembic revision -m "create revisions" <-- example
 ```
 - this will create an empty revision
-	- ![[Pasted image 20230415041813.png]]
+	- ![](migration_name.png)
 - inside it will be 2 methods 
 	- upgrade -> update's thy model
 	- downgrade -> the opposite, rolls back the update
 - modify the `upgrade` method:
-	- ![[Pasted image 20230415041958.png]]
+	- ![](upgrade_method_py.png)
 ```bash
 alembic upgrade <revision>
 alembic upgrade  6a614d204c53 <-- example
